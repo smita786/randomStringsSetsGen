@@ -1,0 +1,32 @@
+randomStringsSetsGen
+====================
+broadly speaking this application generate set of random strings and get saved to your system, with an option to choose how many number of strings you want to generate, what all character you want to include in each randomly generated strings, what range of size you want for each random strings.
+additionly you can create a different profile for generating random strings which contains rules for generating strings. you can choose one of the profile while generation.
+
+the script also include user registration/login with captcha validation.
+
+for installing just download the code, and make thse two mysql tables.
+profile_names:
++------------+----------------+------+-----+---------+----------------+
+| Field      | Type           | Null | Key | Default | Extra          |
++------------+----------------+------+-----+---------+----------------+
+| id         | int(11)        | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(500)   | YES  |     | NULL    |                |
+| defination | varchar(50000) | YES  |     | NULL    |                |
++------------+----------------+------+-----+---------+----------------+
+
+users:
++----------+---------------+------+-----+---------+----------------+
+| Field    | Type          | Null | Key | Default | Extra          |
++----------+---------------+------+-----+---------+----------------+
+| id       | int(11)       | NO   | PRI | NULL    | auto_increment |
+| email    | varchar(500)  | YES  |     | NULL    |                |
+| password | varchar(1024) | YES  |     | NULL    |                |
+| name     | varchar(1024) | YES  |     | NULL    |                |
++----------+---------------+------+-----+---------+----------------+
+
+in config/database.php, make sure you change the settings as per your database.
+
+
+this application is developed in cakePhp framework.
+CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
