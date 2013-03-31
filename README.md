@@ -5,25 +5,15 @@ additionly you can create a different profile for generating random strings whic
 
 the script also include user registration/login with captcha validation.
 
-for installing just download the code, and make thse two mysql tables.
+for installing just download the code, and create thse two mysql tables.
+
 profile_names:
-+------------+----------------+------+-----+---------+----------------+
-| Field      | Type           | Null | Key | Default | Extra          |
-+------------+----------------+------+-----+---------+----------------+
-| id         | int(11)        | NO   | PRI | NULL    | auto_increment |
-| name       | varchar(500)   | YES  |     | NULL    |                |
-| defination | varchar(50000) | YES  |     | NULL    |                |
-+------------+----------------+------+-----+---------+----------------+
+
+create table profile_names(id integer primary key auto_increment,name varchar(500),defination varchar(50000));
 
 users:
-+----------+---------------+------+-----+---------+----------------+
-| Field    | Type          | Null | Key | Default | Extra          |
-+----------+---------------+------+-----+---------+----------------+
-| id       | int(11)       | NO   | PRI | NULL    | auto_increment |
-| email    | varchar(500)  | YES  |     | NULL    |                |
-| password | varchar(1024) | YES  |     | NULL    |                |
-| name     | varchar(1024) | YES  |     | NULL    |                |
-+----------+---------------+------+-----+---------+----------------+
+
+create table users(id integer primary key auto_increment,email varchar(500),password varchar(1024),name varchar(1024));
 
 in config/database.php, make sure you change the settings as per your database.
 
